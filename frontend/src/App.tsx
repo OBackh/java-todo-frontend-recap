@@ -2,8 +2,37 @@ import Backlog from "./components/Backlog.tsx";
 import './App.css'
 import Done from "./components/Done.tsx";
 import In_progress from "./components/In_progress.tsx";
+import { useState, useEffect} from "react";
+import axios from "axios"; //API Helper for easy fetching (See Line 23!)
+
+type toDoCard = {
+    id: string;
+    title: string;
+    content: string;
+    status: string
+}
 
 export default function App() {
+
+    const [cards, setCards] = useState<toDoCard[]>([])
+
+
+    useEffect(()=>{
+        console.log("Sending Request for 2Dos ")
+        axios.get(`/api/todo`)
+            .then((response) => {
+                setCards(response.data);
+                //Add new Characters to old ones
+                //setCharacters([...setCharacters, ...response.data.results])
+                //additional infos: setPageInfo(response.data.info)
+            })
+            .catch((error) => {
+                alert(error.message)
+            });
+        console.log("Done Sending Request!")
+    }, [])
+
+
 
   return (
       <>
@@ -23,7 +52,7 @@ export default function App() {
           </h1>
 
           <div className="tableContainer">
-              <Backlog/>
+              <Backlog cards={cards}/>
               <In_progress/>
               <Done/>
           </div>

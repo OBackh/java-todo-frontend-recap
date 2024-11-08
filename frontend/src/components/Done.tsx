@@ -4,7 +4,7 @@ export default function Done(){
     return(
         <>
             <div className="statusContainer">
-                <h2 className="headlines">Ich bin Done!</h2>
+                <h2 className="headlines">Done</h2>
                 <ToDoCard/>
             </div>
         </>
