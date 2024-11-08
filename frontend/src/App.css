@@ -30,6 +30,7 @@ body, html {
   border-radius: 5px;
   padding-left: 8px;
   padding-right: 8px;
+  margin-bottom: 5px;
   color: #fff;
   border: 1px solid #1a1a1a;
 }
@@ -38,6 +39,7 @@ body, html {
   width: 85vw;
   display: flex;
   justify-content: space-around;
+  gap: 5px;
 }
 
 .statusContainer {
@@ -47,11 +49,56 @@ body, html {
 }
 
 .toDoCard {
-
-  border: 1px solid #bbbbbb;
+  border: 2px solid #6495ED;
   border-radius: 5px;
   margin-bottom: 8px;
+  padding-bottom: 8px;
+  color: #1a1a1a;
   background-color: #fff;
   min-width: 20rem;
   min-height: 6rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
+
+.cardId {
+  font-size: x-small;
+}
+
+.cardStatus {
+font-size: smaller;
+}
+
+.deleteButton {
+  border-radius: 50%;
+  width: 5px;
+  background-color: red;
+  border: 2px solid #000;
+  display: flex;
+  justify-content: center;
+  align-self: center;
+  font-weight: bolder;
+  font-size: smaller;
+}
+
+.inputField {
+  _position: absolute;
+  left: 0.5rem;
+  bottom: 2rem;
+  background-color: white;
+  border: 2px solid #6495ED;
+  width: 60vw;
+  height: 2rem;
+}
+
+.sendButton {
+  background-color: #6495ED;
+  color: #4147bf;
+  border: 2px solid #4147bf;
+  height: 2rem;
+  display: flex;
+  justify-self: right;
+  justify-content: center;
+  align-self: center;
+  }
